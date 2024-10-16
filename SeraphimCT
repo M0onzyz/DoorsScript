@@ -3189,7 +3189,7 @@ local function C_71()
 		for i,v in pairs(yes:GetChildren()) do
 			if v.Visible then
 				if v.Name == "Dex" then
-				loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/dex.lua"))()
+				loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Dark-Dex-19903"))()
 			elseif v.Name == "RemoteSpy" then
 				loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/SimpleSpyV3/main.lua"))()
 			elseif v.Name == "UnnamedESP" then
