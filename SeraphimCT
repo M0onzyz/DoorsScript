@@ -1,4 +1,21 @@
--- loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/Chillz-s-scripts/main/Synapse-X-Remake.lua"))()
+local scriptStatus = {}
+
+-- Function to load the script
+local function loadMyScript()
+    -- Check if the script has already been loaded
+    if scriptStatus["myScript"] then
+        print("Script is already loaded. Exiting...")
+        return
+    end
+
+    -- Mark the script as loaded
+    scriptStatus["myScript"] = true
+
+    -- Your script logic goes here
+    print("Loading the script...")
+
+    -- Example of script functionality
+    -- loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/Chillz-s-scripts/main/Synapse-X-Remake.lua"))()
 if getgenv().SeraphimLoaded then
 end
 
@@ -3471,3 +3488,8 @@ end;
 task.spawn(C_93);
 
 return G2L["1"], require;
+
+end
+
+-- Call the function to load the script
+loadMyScript()
