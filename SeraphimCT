@@ -1,24 +1,10 @@
-local MyScript = {}
-
-local isLoaded = false  -- Flag to check if the script is loaded
-
-function MyScript.Load()
-    if isLoaded then
-        print("Script is already loaded. Exiting...")
-        return
-    end
-
-    isLoaded = true  -- Set the flag to true
-
-    -- Your script logic goes here
-    print("Loading the script...")
-
-    -- Example functionality
-    -- loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/Chillz-s-scripts/main/Synapse-X-Remake.lua"))()
-if getgenv().SeraphimLoaded then
+-- loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/Chillz-s-scripts/main/Synapse-X-Remake.lua"))()
+if getgenv().Loaded then
+    
+    return
 end
 
-getgenv().SeraphimLoaded = true
+getgenv().Loaded = true
 local synversion = "Beta"
 
 -- this shit function makes my script fucked
@@ -3487,7 +3473,3 @@ end;
 task.spawn(C_93);
 
 return G2L["1"], require;
-
-end
-
-return MyScript
