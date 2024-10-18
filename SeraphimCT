@@ -3,8 +3,6 @@ if getgenv().SeraphimLoaded then
 end
 
 getgenv().SeraphimLoaded = true
-print("Discord: https://discord.gg/N8gFBgdHGv")
-print("Made By M0onzyz")
 local synversion = "Beta"
 
 -- this shit function makes my script fucked
@@ -20,7 +18,8 @@ local synversion = "Beta"
     end
 end)]]
 -- Instances: 150 | Scripts: 8 | Modules: 4
-
+print("Discord: https://discord.gg/N8gFBgdHGv")
+print("Made By M0onzyz")
 local G2L = {};
 -- StarterGui.SeraphimCT
 G2L["1"] = Instance.new("ScreenGui", game:GetService("CoreGui"));
