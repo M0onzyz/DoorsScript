@@ -1,20 +1,19 @@
-local scriptStatus = {}
+local MyScript = {}
 
--- Function to load the script
-local function loadMyScript()
-    -- Check if the script has already been loaded
-    if scriptStatus["myScript"] then
+local isLoaded = false  -- Flag to check if the script is loaded
+
+function MyScript.Load()
+    if isLoaded then
         print("Script is already loaded. Exiting...")
         return
     end
 
-    -- Mark the script as loaded
-    scriptStatus["myScript"] = true
+    isLoaded = true  -- Set the flag to true
 
     -- Your script logic goes here
     print("Loading the script...")
 
-    -- Example of script functionality
+    -- Example functionality
     -- loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/Chillz-s-scripts/main/Synapse-X-Remake.lua"))()
 if getgenv().SeraphimLoaded then
 end
@@ -3491,5 +3490,4 @@ return G2L["1"], require;
 
 end
 
--- Call the function to load the script
-loadMyScript()
+return MyScript
