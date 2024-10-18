@@ -1,4 +1,10 @@
 -- loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/Chillz-s-scripts/main/Synapse-X-Remake.lua"))()
+if getgenv().SeraphimLoaded then
+    warn("Tick")
+    return
+end
+
+getgenv().SeraphimLoaded = true
 local synversion = "1.0"
 
 -- this shit function makes my script fucked
