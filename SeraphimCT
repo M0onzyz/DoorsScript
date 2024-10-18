@@ -5,7 +5,7 @@ if getgenv().SeraphimLoaded then
 end
 
 getgenv().SeraphimLoaded = true
-print("Discord: https://discord.gg/N8gFBgdHGv...")
+print("Discord: https://discord.gg/N8gFBgdHGv")
 print("Made By M0onzyz")
 local synversion = "Beta"
 
