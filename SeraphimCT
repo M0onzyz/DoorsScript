@@ -1,6 +1,6 @@
 -- loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/Chillz-s-scripts/main/Synapse-X-Remake.lua"))()
 if getgenv().SeraphimLoaded then
-    warn("Tick")
+    
     return
 end
 
