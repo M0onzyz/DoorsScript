@@ -7,7 +7,7 @@ local colourTable = {
     Orange = Color3.fromRGB(255, 165, 0),
     Purple = Color3.fromRGB(128, 0, 128)
 }
-local colourChosen = colourTable.Purple -- Change "Red" to whatever colour you like from the table above, feel free to add other colours as well.
+_G.colourChosen = colourTable.Purple -- Change "Red" to whatever colour you like from the table above, feel free to add other colours as well.
 _G.ESPToggle = false -- This is the variable used for enabling/disabling ESP. If you are using a GUI library, or your own custom GUI, then set this variable to the callback function. 
 
 -- Services and lp
@@ -31,7 +31,7 @@ local function addHighlightToCharacter(player, character)
         highlightClone.Adornee = character
         highlightClone.Parent = humanoidRootPart
         highlightClone.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
-        highlightClone.FillColor = colourChosen
+        highlightClone.FillColor = _G.colourChosen
         highlightClone.OutlineColor = Color3.fromRGB(255, 255, 255)
         highlightClone.FillTransparency = 0.5
     end
