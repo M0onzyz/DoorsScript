@@ -7,7 +7,7 @@ local colourTable = {
     Orange = Color3.fromRGB(255, 165, 0),
     Purple = Color3.fromRGB(128, 0, 128)
 }
-local colourChosen = colourTable.Purple -- Change "Red" to whatever colour you like from the table above, feel free to add other colours as well.
+local colourChosen = colourTable.Red -- Change "Red" to whatever colour you like from the table above, feel free to add other colours as well.
 _G.ESPToggle = false -- This is the variable used for enabling/disabling ESP. If you are using a GUI library, or your own custom GUI, then set this variable to the callback function. 
 
 -- Services and lp
@@ -16,19 +16,6 @@ local LocalPlayer = Players.LocalPlayer
 local RunService = game:GetService("RunService")
 local UserInputService = game:GetService("UserInputService")
 local Workspace = game:GetService("Workspace")
-
--- The following screen gui, frame and button creation may be deleted if you are using a custom GUI library. 
--- Create the screen gui
-local screenGui = Instance.new("ScreenGui")
-screenGui.Name = "ESPToggleGui"
-screenGui.Parent = LocalPlayer:WaitForChild("PlayerGui")
-
--- Create a frame
-local mainFrame = Instance.new("Frame")
-mainFrame.Name = "MainFrame"
-mainFrame.Size = UDim2.new(1, 0, 1, 0) 
-mainFrame.BackgroundTransparency = 1  
-mainFrame.Parent = screenGui
 
 local function getCharacter(player)
     return Workspace:FindFirstChild(player.Name)
@@ -94,24 +81,5 @@ Players.PlayerRemoving:Connect(function(playerRemoved)
     local character = playerRemoved.Character
     if character then
         removeHighlightFromCharacter(character)
-    end
-end)
-
--- The following code may be deleted if you are using a custom GUI library. 
-
--- Toggle ESP Button Text based on variable status
-toggleButton.MouseButton1Click:Connect(function()
-    _G.ESPToggle = not _G.ESPToggle
-    if _G.ESPToggle then
-        toggleButton.Text = "ESP ON"
-    else
-        toggleButton.Text = "ESP OFF"
-    end
-end)
-
--- Keybind to toggle GUI visibility
-UserInputService.InputBegan:Connect(function(input, gameProcessed)
-    if input.KeyCode == Enum.KeyCode.H and not gameProcessed then -- Change Enum.KeyCode.H to another key if you want to, e.g. Enum.KeyCode.P for "P" Key.
-        mainFrame.Visible = not mainFrame.Visible
     end
 end)
