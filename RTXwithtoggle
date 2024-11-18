@@ -1,7 +1,7 @@
 local LightingEffects = {}
 local Lighting = game:GetService("Lighting")
 local StarterGui = game:GetService("StarterGui")
-local isEnabled = false -- Toggle state
+local isEnabled = false -- Effects are off by default
 
 -- Create and store lighting effects
 function LightingEffects:CreateEffects()
@@ -72,6 +72,7 @@ function LightingEffects:Toggle()
     if isEnabled then
         self:CreateEffects()
     else
+        -- If effects are toggled off, destroy them
         for _, v in pairs(Lighting:GetChildren()) do
             if v:IsA("Instance") then
                 v:Destroy()
