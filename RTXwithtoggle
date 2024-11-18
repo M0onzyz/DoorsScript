@@ -1,0 +1,81 @@
+local LightingEffects = {}
+local Lighting = game:GetService("Lighting")
+local StarterGui = game:GetService("StarterGui")
+local isEnabled = false -- Toggle state
+
+-- Create and store lighting effects
+function LightingEffects:CreateEffects()
+    -- Remove any existing effects
+    for _, v in pairs(Lighting:GetChildren()) do
+        if v:IsA("Instance") then
+            v:Destroy()
+        end
+    end
+
+    -- Bloom
+    local Bloom = Instance.new("BloomEffect")
+    Bloom.Intensity = 0.3
+    Bloom.Size = 10
+    Bloom.Threshold = 0.8
+    Bloom.Parent = Lighting
+
+    -- Blur
+    local Blur = Instance.new("BlurEffect")
+    Blur.Size = 5
+    Blur.Parent = Lighting
+
+    -- Color Correction
+    local ColorCor = Instance.new("ColorCorrectionEffect")
+    ColorCor.Brightness = 0.1
+    ColorCor.Contrast = 0.5
+    ColorCor.Saturation = -0.3
+    ColorCor.TintColor = Color3.fromRGB(255, 235, 203)
+    ColorCor.Parent = Lighting
+
+    -- Sun Rays
+    local SunRays = Instance.new("SunRaysEffect")
+    SunRays.Intensity = 0.075
+    SunRays.Spread = 0.727
+    SunRays.Parent = Lighting
+
+    -- Sky
+    local Sky = Instance.new("Sky")
+    Sky.SkyboxBk = "http://www.roblox.com/asset/?id=151165214"
+    Sky.SkyboxDn = "http://www.roblox.com/asset/?id=151165197"
+    Sky.SkyboxFt = "http://www.roblox.com/asset/?id=151165224"
+    Sky.SkyboxLf = "http://www.roblox.com/asset/?id=151165191"
+    Sky.SkyboxRt = "http://www.roblox.com/asset/?id=151165206"
+    Sky.SkyboxUp = "http://www.roblox.com/asset/?id=151165227"
+    Sky.SunAngularSize = 10
+    Sky.Parent = Lighting
+
+    -- Atmosphere
+    local Atm = Instance.new("Atmosphere")
+    Atm.Density = 0.364
+    Atm.Offset = 0.556
+    Atm.Color = Color3.fromRGB(199, 175, 166)
+    Atm.Decay = Color3.fromRGB(44, 39, 33)
+    Atm.Glare = 0.36
+    Atm.Haze = 1.72
+    Atm.Parent = Lighting
+
+    -- Lighting settings
+    Lighting.Ambient = Color3.fromRGB(2, 2, 2)
+    Lighting.Brightness = 2.25
+    Lighting.ClockTime = 17
+    Lighting.ExposureCompensation = 0.5
+end
+
+-- Toggle effects
+function LightingEffects:Toggle()
+    isEnabled = not isEnabled
+    if isEnabled then
+        self:CreateEffects()
+    else
+        for _, v in pairs(Lighting:GetChildren()) do
+            if v:IsA("Instance") then
+                v:Destroy()
+            end
+        end
+    end
+end
