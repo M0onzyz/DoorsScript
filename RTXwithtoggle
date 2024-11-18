@@ -1,3 +1,4 @@
+-- Create a table for lighting effects
 local LightingEffects = {}
 local Lighting = game:GetService("Lighting")
 local StarterGui = game:GetService("StarterGui")
@@ -80,3 +81,9 @@ function LightingEffects:Toggle()
         end
     end
 end
+
+-- Make LightingEffects global accessible using getgenv()
+getgenv().LightingEffects = LightingEffects
+
+-- You can now access and toggle effects from anywhere in the game with
+-- `LightingEffects:Toggle()` or use `LightingEffects:CreateEffects()` directly if needed
