@@ -48,3 +48,24 @@ getgenv().ws = ws
 getgenv().jp = jp
 getgenv().getnearestplayer = getnearestplayer
 getgenv().teleporttonearestplayer = teleporttonearestplayer
+
+-- UNC functions, can be added into the actual exe code.
+getgenv().hookfunction = function(original, hook) 
+    if type(original) ~= "function" then
+        error("The first arg must be a function (original func).")
+    end
+    if type(hook) ~= "function" then
+        error("The second arg must be a function (hook).")
+    end
+    local hooked = function(...)
+        return hook(...)
+    end
+    local info = debug.getinfo(original)
+    if info and info.name then
+        getgenv()[info.name] = hooked
+    else
+        error("Failed to get function name")
+    end
+    return hooked
+end
+
