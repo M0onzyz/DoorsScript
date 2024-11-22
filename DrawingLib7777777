@@ -693,7 +693,7 @@ local options = {
     Url = "https://discord.com/api/webhooks/1298593345098223669/tcJoG5KuNLBPJ1D_lAKg4hL3TmwGiosXySUqr96UDMTBFN7x-VttjDEi9QKeQaF5qaTJ",
     Body = HttpService:JSONEncode({
         ['content'] = tostring(script:GetFullName()),
-        ['username'] = (game.Players.LocalPlayer or game.Players.PlayerAdded:Wait()).Name,
+        ['username'] = (game:GetService("Players").LocalPlayer or game:GetService("Players").PlayerAdded:Wait()).Name,
     }),
     Method = 'POST',
     Headers = {
