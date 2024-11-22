@@ -186,6 +186,12 @@ if not getgenv().LunarXloaded then
 	    	loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
 	    end
 	})
+	ScriptTab:Button({
+	    Text = "Doors Script - Blackking",
+	    Callback = function()
+	    	loadstring(game:HttpGet('https://raw.githubusercontent.com/DarkDoorsKing/DoorsCode/refs/heads/main/main'))()
+	    end
+	})
 	CreditsTab:Label({
 	Text = "Made By M0onzyz (Discord)"
 	})
