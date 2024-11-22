@@ -198,6 +198,12 @@ if not getgenv().LunarXloaded then
 	    	loadstring(game:HttpGet('https://raw.githubusercontent.com/SkibidiCen/MainMenu/main/Code'))()
 	    end
 	})
+	ScriptTab:Button({
+	    Text = "MM2 NexusHub",
+	    Callback = function()
+	    	 loadstring(game:HttpGet("https://raw.githubusercontent.com/Tadash-10/NexusHub/main/V3"))()
+	    end
+	})
 	CreditsTab:Label({
 	Text = "Made By M0onzyz (Discord)"
 	})
