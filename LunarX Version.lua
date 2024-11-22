@@ -192,6 +192,12 @@ if not getgenv().LunarXloaded then
 	    	loadstring(game:HttpGet('https://raw.githubusercontent.com/DarkDoorsKing/DoorsCode/refs/heads/main/main'))()
 	    end
 	})
+	ScriptTab:Button({
+	    Text = "Script Hub, Rivals, Arsenal, MM2 etc.",
+	    Callback = function()
+	    	loadstring(game:HttpGet('https://raw.githubusercontent.com/SkibidiCen/MainMenu/main/Code'))()
+	    end
+	})
 	CreditsTab:Label({
 	Text = "Made By M0onzyz (Discord)"
 	})
