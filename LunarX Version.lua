@@ -31,6 +31,9 @@ if not getgenv().LunarXloaded then
 	local PlayerTab = Window:CreateTab({
 	    Name = "Player"
 	})
+	local ScriptTab = Window:CreateTab({
+	    Name = "Scripts"
+	})
 	local ExtrasTab = Window:CreateTab({
 	    Name = "Extra"
 	})
@@ -175,6 +178,12 @@ if not getgenv().LunarXloaded then
 	    Text = "RTX (Toggle Semi Functional)",
 	    Callback = function()
 	    	LightingEffects:Toggle()
+	    end
+	})
+	ScriptTab:Button({
+	    Text = "Inf Yield",
+	    Callback = function()
+	    	loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
 	    end
 	})
 	CreditsTab:Label({
