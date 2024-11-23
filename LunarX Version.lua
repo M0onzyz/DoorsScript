@@ -199,9 +199,9 @@ if not getgenv().LunarXloaded then
 	    end
 	})
 	ScriptTab:Button({
-	    Text = "MM2 NexusHub",
+	    Text = "IYR (Infinite Yield Reborn)",
 	    Callback = function()
-	    	 loadstring(game:HttpGet("https://raw.githubusercontent.com/Tadash-10/NexusHub/main/V3"))()
+	    	 loadstring(game:HttpGet("https://storage.iyr.lol/legacy-iyr/source"))
 	    end
 	})
 	CreditsTab:Label({
