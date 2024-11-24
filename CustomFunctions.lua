@@ -1,22 +1,5 @@
--- Functions Locals
-local Players = game:GetService("Players")
-local LocalPlayer = Players.LocalPlayer
-local Character = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()
-local RootPart = Character:WaitForChild("HumanoidRootPart")
--- Functions
-function unctest()
-  loadstring(game:HttpGet("https://github.com/ltseverydayyou/uuuuuuu/blob/main/UNC%20test?raw=true"))()
-end
-function ws(speed)
-  local playerHumanoid = game.Players.LocalPlayer.Character.Humanoid
-  playerHumanoid.WalkSpeed = speed
-end
-function jp(power)
-  local playerHumanoid = game.Players.LocalPlayer.Character.Humanoid
-  playerHumanoid.JumpPower = power
-end
-function injscreen()
-  local upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+-- Definitions for injscreen
+local upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 	local lowerCase = "abcdefghijklmnopqrstuvwxyz"
 	local numbers = "0123456789"
 	local symbols = "!@#$%&()*+-,./\:;<=>?^[]{}"
@@ -123,109 +106,126 @@ function injscreen()
 	Description.TextSize = 17.000
 	Description.TextTransparency = 1.000
 	Description.TextXAlignment = Enum.TextXAlignment.Left
+
+
+-- Functions Locals
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+local Character = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()
+local RootPart = Character:WaitForChild("HumanoidRootPart")
+-- Functions
+function unctest()
+  loadstring(game:HttpGet("https://github.com/ltseverydayyou/uuuuuuu/blob/main/UNC%20test?raw=true"))()
 end
-	
-	local function TIBAKZY_fake_script()
-		local script = Instance.new('LocalScript', LunarXInjectionScreen)
-	
-		BFrame = script.Parent.Main
-		TB = BFrame.TextBackground
-		Logo = BFrame.Logo
+function ws(speed)
+  local playerHumanoid = game.Players.LocalPlayer.Character.Humanoid
+  playerHumanoid.WalkSpeed = speed
+end
+function jp(power)
+  local playerHumanoid = game.Players.LocalPlayer.Character.Humanoid
+  playerHumanoid.JumpPower = power
+end
+		function injscreen()
+			local script = Instance.new('LocalScript', LunarXInjectionScreen)
 		
-		TFrame = BFrame.TextFrame
-		Name = TFrame.TFName
-		Desc = TFrame.Description
-		
-		-- Set Properties Values
-		
-		BFrame.Visible = true
-		
-		BFrame.Transparency = 1
-		Logo.ImageTransparency = 1
-		TB.ImageTransparency = 1
-		
-		Name.TextTransparency = 1
-		Desc.TextTransparency = 1
-		
-		TFrame.Position = UDim2.new(0.5,150,0.5,0)
-		Logo.Size = UDim2.new(0,115,0,115)
-		
-		-- Wait until the Game is Loaded
-		repeat task.wait(1) until game:IsLoaded()
-		
-		
-		-- Install the Blurring Effect
-		BlurRadius = 0
-		BlurEffect = Instance.new("BlurEffect", game.Lighting)
-		
-		-- Fade in Nihon Logo
-		game:GetService("TweenService"):Create(Logo, TweenInfo.new(1), {ImageTransparency = 0}):Play()
-		
-		-- Fade in Blurring Effect
-		for i=1, 50 do
-			BlurRadius = BlurRadius+1 
-			BlurEffect.Size = BlurRadius
-			task.wait(0.01)
+			BFrame = script.Parent.Main
+			TB = BFrame.TextBackground
+			Logo = BFrame.Logo
+			
+			TFrame = BFrame.TextFrame
+			Name = TFrame.TFName
+			Desc = TFrame.Description
+			
+			-- Set Properties Values
+			
+			BFrame.Visible = true
+			
+			BFrame.Transparency = 1
+			Logo.ImageTransparency = 1
+			TB.ImageTransparency = 1
+			
+			Name.TextTransparency = 1
+			Desc.TextTransparency = 1
+			
+			TFrame.Position = UDim2.new(0.5,150,0.5,0)
+			Logo.Size = UDim2.new(0,115,0,115)
+			
+			-- Wait until the Game is Loaded
+			repeat task.wait(1) until game:IsLoaded()
+			
+			
+			-- Install the Blurring Effect
+			BlurRadius = 0
+			BlurEffect = Instance.new("BlurEffect", game.Lighting)
+			
+			-- Fade in Nihon Logo
+			game:GetService("TweenService"):Create(Logo, TweenInfo.new(1), {ImageTransparency = 0}):Play()
+			
+			-- Fade in Blurring Effect
+			for i=1, 50 do
+				BlurRadius = BlurRadius+1 
+				BlurEffect.Size = BlurRadius
+				task.wait(0.01)
+			end
+			
+			-- Fade in Background and Text Background
+			game:GetService("TweenService"):Create(BFrame, TweenInfo.new(1), {Transparency = 0}):Play()
+			game:GetService("TweenService"):Create(TB, TweenInfo.new(1), {ImageTransparency = 0}):Play()
+			
+			-- Wait 2 Seconds
+			task.wait(2)
+			
+			-- Remove Blurring Effect
+			BlurEffect:Destroy()
+			
+			-- Shrink Background and Logo
+			BFrame:TweenSize(UDim2.new(0, 248,0, 153), "Out", "Quad", 1, true)
+			Logo:TweenSize(UDim2.new(0, 80, 0, 80), "Out", "Quad", 1, true)
+			
+			-- Wait 1 Second
+			task.wait(1)
+			
+			-- Shift Position of Logo and Text Frame so that they are next to each other
+			Logo:TweenPosition(UDim2.new(0.5,-50,0.5,0), "Out", "Quad", 1, true)
+			TFrame:TweenPosition(UDim2.new(0.5,50,0.5,0), "Out", "Quad", 1, true)
+			
+			-- Fade in Name and Description
+			game:GetService("TweenService"):Create(Name, TweenInfo.new(1), {TextTransparency = 0}):Play()
+			game:GetService("TweenService"):Create(Desc, TweenInfo.new(1), {TextTransparency = 0}):Play()
+			
+			-- Wait 2 Seconds
+			task.wait(2)
+			
+			-- Return Logo and TextFrame to Original Position
+			Logo:TweenPosition(UDim2.new(0.5,0,0.5,0), "Out", "Quad", 1, true)
+			TFrame:TweenPosition(UDim2.new(0.5,150,0.5,0), "Out", "Quad", 1, true)
+			
+			-- Fade out Background and Text Background
+			game:GetService("TweenService"):Create(Name, TweenInfo.new(1), {TextTransparency = 1}):Play()
+			game:GetService("TweenService"):Create(Desc, TweenInfo.new(1), {TextTransparency = 1}):Play()
+			
+			-- Wait 2 Seconds
+			task.wait(2)
+			
+			-- Shrink Background into a Square
+			BFrame:TweenSize(UDim2.new(0, 153,0, 153), "Out", "Quad", 0.5, true)
+			
+			task.wait(0.5)
+			
+			-- Shrink Background and Logo into Nothing
+			Logo:TweenSize(UDim2.new(0, 0, 0, 0), "Out", "Quad", 0.5, true)
+			BFrame:TweenSize(UDim2.new(0, 0, 0, 0), "Out", "Quad", 0.5, true)
+			
+			-- Wait 1 Second
+			task.wait(1)
+			
+			-- Remove GUI Entirely
+			script.Parent:Destroy()
+			
+			
 		end
-		
-		-- Fade in Background and Text Background
-		game:GetService("TweenService"):Create(BFrame, TweenInfo.new(1), {Transparency = 0}):Play()
-		game:GetService("TweenService"):Create(TB, TweenInfo.new(1), {ImageTransparency = 0}):Play()
-		
-		-- Wait 2 Seconds
-		task.wait(2)
-		
-		-- Remove Blurring Effect
-		BlurEffect:Destroy()
-		
-		-- Shrink Background and Logo
-		BFrame:TweenSize(UDim2.new(0, 248,0, 153), "Out", "Quad", 1, true)
-		Logo:TweenSize(UDim2.new(0, 80, 0, 80), "Out", "Quad", 1, true)
-		
-		-- Wait 1 Second
-		task.wait(1)
-		
-		-- Shift Position of Logo and Text Frame so that they are next to each other
-		Logo:TweenPosition(UDim2.new(0.5,-50,0.5,0), "Out", "Quad", 1, true)
-		TFrame:TweenPosition(UDim2.new(0.5,50,0.5,0), "Out", "Quad", 1, true)
-		
-		-- Fade in Name and Description
-		game:GetService("TweenService"):Create(Name, TweenInfo.new(1), {TextTransparency = 0}):Play()
-		game:GetService("TweenService"):Create(Desc, TweenInfo.new(1), {TextTransparency = 0}):Play()
-		
-		-- Wait 2 Seconds
-		task.wait(2)
-		
-		-- Return Logo and TextFrame to Original Position
-		Logo:TweenPosition(UDim2.new(0.5,0,0.5,0), "Out", "Quad", 1, true)
-		TFrame:TweenPosition(UDim2.new(0.5,150,0.5,0), "Out", "Quad", 1, true)
-		
-		-- Fade out Background and Text Background
-		game:GetService("TweenService"):Create(Name, TweenInfo.new(1), {TextTransparency = 1}):Play()
-		game:GetService("TweenService"):Create(Desc, TweenInfo.new(1), {TextTransparency = 1}):Play()
-		
-		-- Wait 2 Seconds
-		task.wait(2)
-		
-		-- Shrink Background into a Square
-		BFrame:TweenSize(UDim2.new(0, 153,0, 153), "Out", "Quad", 0.5, true)
-		
-		task.wait(0.5)
-		
-		-- Shrink Background and Logo into Nothing
-		Logo:TweenSize(UDim2.new(0, 0, 0, 0), "Out", "Quad", 0.5, true)
-		BFrame:TweenSize(UDim2.new(0, 0, 0, 0), "Out", "Quad", 0.5, true)
-		
-		-- Wait 1 Second
-		task.wait(1)
-		
-		-- Remove GUI Entirely
-		script.Parent:Destroy()
-		
-		
-	end
-	coroutine.wrap(TIBAKZY_fake_script)()
-	wait(7)
+		coroutine.wrap(injscreen)()
+		wait(7)
 	--Injection Screen End
 end
 function gravity(sps)
