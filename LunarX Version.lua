@@ -210,7 +210,7 @@ if not getgenv().LunarXloaded then
 		
 	end
 	coroutine.wrap(TIBAKZY_fake_script)()
-	wait(3.5)
+	wait(7)
 	--Injection Screen End
 
 	
