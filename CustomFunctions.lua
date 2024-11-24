@@ -123,6 +123,7 @@ function injscreen()
 	Description.TextSize = 17.000
 	Description.TextTransparency = 1.000
 	Description.TextXAlignment = Enum.TextXAlignment.Left
+end
 	
 	local function TIBAKZY_fake_script()
 		local script = Instance.new('LocalScript', LunarXInjectionScreen)
