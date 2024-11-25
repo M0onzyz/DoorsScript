@@ -1,7 +1,5 @@
 if not getgenv().LunarXloaded then
     getgenv().LunarXloaded = true
-if not getgenv().LunarXloaded then
-    getgenv().LunarXloaded = true
 
 		--Injection Screen Start
 	local upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -423,7 +421,5 @@ if not getgenv().LunarXloaded then
 	CreditsTab:Label({
 	Text = "Made By M0onzyz (Discord)"
 	})
-else
-end
 else
 end
