@@ -418,12 +418,6 @@ if not getgenv().LunarXloaded then
 	    	 loadstring(game:HttpGet("https://storage.iyr.lol/legacy-iyr/source"))
 	    end
 	})
-	ScriptTab:Button({
-		Text = "Arsenal (KEY_7IEUZoT51f)"
-		Callback = function()
-			loadstring(game:HttpGet("https://raw.githubusercontent.com/helldevelopment/RobloxScripts/main/SanityLoader.lua"))()
-		end
-	})
 	CreditsTab:Label({
 	Text = "Made By M0onzyz (Discord)"
 	})
