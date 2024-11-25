@@ -213,7 +213,7 @@ if not getgenv().LunarXloaded then
 	wait(7)
 	--Injection Screen End
 
-	
+	notification("LunarX", "Made By M0onzyz")
 	-- Load Esp Script, Custom Functions, And RTX
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/M0onzyz/SeraphimCT/refs/heads/main/CustomFunctions.lua"))()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/M0onzyz/SeraphimCT/refs/heads/main/SimpleESP.lua"))()
@@ -315,6 +315,7 @@ if not getgenv().LunarXloaded then
 	    Text = "Execute",
 	    Callback = function()
 	    ExecuteText()
+		executenotification()
 	    end,
 	})
 	
