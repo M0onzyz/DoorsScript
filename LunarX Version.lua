@@ -1,5 +1,7 @@
 if not getgenv().LunarXloaded then
     getgenv().LunarXloaded = true
+if not getgenv().LunarXloaded then
+    getgenv().LunarXloaded = true
 
 		--Injection Screen Start
 	local upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -213,7 +215,7 @@ if not getgenv().LunarXloaded then
 	wait(7)
 	--Injection Screen End
 
-	notification("LunarX", "Made By M0onzyz")
+	
 	-- Load Esp Script, Custom Functions, And RTX
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/M0onzyz/SeraphimCT/refs/heads/main/CustomFunctions.lua"))()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/M0onzyz/SeraphimCT/refs/heads/main/SimpleESP.lua"))()
@@ -315,7 +317,6 @@ if not getgenv().LunarXloaded then
 	    Text = "Execute",
 	    Callback = function()
 	    ExecuteText()
-		executenotification()
 	    end,
 	})
 	
@@ -416,11 +417,13 @@ if not getgenv().LunarXloaded then
 	ScriptTab:Button({
 	    Text = "IYR (Infinite Yield Reborn)",
 	    Callback = function()
-	    	 loadstring(game:HttpGet("https://storage.iyr.lol/legacy-iyr/source"))()
+	    	 loadstring(game:HttpGet("https://storage.iyr.lol/legacy-iyr/source"))
 	    end
 	})
 	CreditsTab:Label({
 	Text = "Made By M0onzyz (Discord)"
 	})
+else
+end
 else
 end
