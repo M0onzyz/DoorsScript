@@ -422,6 +422,7 @@ if not getgenv().LunarXloaded then
 		Text = "Arsenal (KEY_7IEUZoT51f)"
 		Callback = function()
 			loadstring(game:HttpGet("https://raw.githubusercontent.com/helldevelopment/RobloxScripts/main/SanityLoader.lua"))()
+		end
 	})
 	CreditsTab:Label({
 	Text = "Made By M0onzyz (Discord)"
