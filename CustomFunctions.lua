@@ -35,7 +35,7 @@ ScreenGui.Name = "NotificationGui"
 ScreenGui.Parent = game.CoreGui
 
 local CONFIG = {
-    Duration = 10,
+    Duration = 3.5,
     Position = UDim2.new(1, -20, 0, 20),
     Size = UDim2.new(0, 350, 0, 70),
     BackgroundColor = Color3.fromRGB(0, 0, 0),
@@ -238,7 +238,7 @@ ScreenGui.Name = "NotificationGui"
 ScreenGui.Parent = game.CoreGui
 
 local CONFIG = {
-    Duration = 10,
+    Duration = 3.5,
     Position = UDim2.new(1, -20, 0, 20),
     Size = UDim2.new(0, 350, 0, 70),
     BackgroundColor = Color3.fromRGB(0, 0, 0),
