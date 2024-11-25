@@ -415,7 +415,7 @@ if not getgenv().LunarXloaded then
 	ScriptTab:Button({
 	    Text = "IYR (Infinite Yield Reborn)",
 	    Callback = function()
-	    	 loadstring(game:HttpGet("https://storage.iyr.lol/legacy-iyr/source"))
+	    	 loadstring(game:HttpGet("https://storage.iyr.lol/legacy-iyr/source"))()
 	    end
 	})
 	CreditsTab:Label({
