@@ -418,6 +418,7 @@ if not getgenv().LunarXloaded then
 	    Callback = function()
 	    	 loadstring(game:HttpGet("https://storage.iyr.lol/legacy-iyr/source"))()
 	    end
+	})
 	CreditsTab:Label({
 	Text = "Made By M0onzyz (Discord)"
 	})
