@@ -418,6 +418,11 @@ if not getgenv().LunarXloaded then
 	    Callback = function()
 	    	 loadstring(game:HttpGet("https://storage.iyr.lol/legacy-iyr/source"))()
 	    end
+	ScriptTab:Button({
+	    Text = "Atlantis Hub Rivals",
+	    Callback = function()
+	    	 loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/fa3707c0fa8d34028c79f2fafc044251.lua"))()
+	    end
 	})
 	CreditsTab:Label({
 	Text = "Made By M0onzyz (Discord)"
